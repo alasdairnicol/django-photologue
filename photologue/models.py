@@ -15,7 +15,11 @@ from django.db.models.signals import post_save
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-from django.core.urlresolvers import reverse
+try:
+    from django.urls import reverse
+except ImportError:
+    # Django 1.8 fallback
+    from django.core.urlresolvers import reverse
 from django.core.exceptions import ValidationError
 from django.template.defaultfilters import slugify
 from django.utils.encoding import force_text, smart_str, filepath_to_uri
