@@ -42,4 +42,4 @@ If you have any questions or need help with any aspect of Photologue then please
 Travis CI status
 ----------------
 We use Travis to check that the unit test suite is working against various combinations
-of Python, Django, etc... `Click here for the full report <http://travis-ci.org/#!/jdriscoll/django-photologue>`_.
+of Python, Django, etc... `Click here for the full report <https://travis-ci.org/jdriscoll/django-photologue>`_.
