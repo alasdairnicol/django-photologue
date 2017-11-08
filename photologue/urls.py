@@ -22,7 +22,7 @@ twice within a few releases, could be confusing, so instead I am updating URLs b
 The new style will coexist with the existing 'pl-' prefix for a couple of releases.
 
 """
-
+app_name = "photologue"
 
 urlpatterns = [
     url(r'^gallery/(?P<year>\d{4})/(?P<month>[0-9]{2})/(?P<day>\w{1,2})/(?P<slug>[\-\d\w]+)/$',
