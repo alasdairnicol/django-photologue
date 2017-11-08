@@ -259,6 +259,7 @@ class ImageModel(models.Model):
                                  default='center',
                                  choices=CROP_ANCHOR_CHOICES)
     effect = models.ForeignKey('photologue.PhotoEffect',
+                               on_delete=models.CASCADE,
                                null=True,
                                blank=True,
                                related_name="%(class)s_related",
@@ -800,11 +801,13 @@ class PhotoSize(models.Model):
                                           help_text=_('If selected the image\'s "view_count" will be incremented when '
                                                       'this photo size is displayed.'))
     effect = models.ForeignKey('photologue.PhotoEffect',
+                               on_delete=models.CASCADE,
                                null=True,
                                blank=True,
                                related_name='photo_sizes',
                                verbose_name=_('photo effect'))
     watermark = models.ForeignKey('photologue.Watermark',
+                                  on_delete=models.CASCADE,
                                   null=True,
                                   blank=True,
                                   related_name='photo_sizes',
