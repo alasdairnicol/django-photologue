@@ -1,6 +1,6 @@
 import copy
 
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.contrib.auth.models import User
 from django import VERSION
 
@@ -9,6 +9,18 @@ from .factories import GalleryFactory, PhotoFactory, SAMPLE_ZIP_PATH, SAMPLE_NOT
     IGNORED_FILES_ZIP_PATH, LANDSCAPE_IMAGE_PATH
 
 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+@override_settings(MIDDLEWARE=MIDDLEWARE)
 class GalleryUploadTest(TestCase):
 
     """Testing the admin page that allows users to upload zips."""
